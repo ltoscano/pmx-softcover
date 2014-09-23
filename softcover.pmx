@@ -1,0 +1,25 @@
+---
+name: Softcover
+description: 'Include installazione completa di softcover e btsync per sincronizzazione '
+keywords: ''
+type: Default
+documentation: ''
+images:
+- name: softcover
+  source: softcover:1.0.1
+  category: Core
+  type: Default
+  ports:
+  - host_port: '42222'
+    container_port: '22'
+    proto: TCP
+  - host_port: '42000'
+    container_port: '4000'
+    proto: TCP
+  environment:
+  - variable: ROOT_PASS
+    value: softcover
+- name: ctlc_btsync
+  source: ctlc/btsync:latest
+  category: Core
+  type: Default
